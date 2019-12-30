@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    {% block title %}{% endblock %}
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/layout.css' %}">
+    <!--<script src = "{% static 'js/layout.js' %}"></script>-->
+</head>
+
+<body>
+    <div class = "topnav">
+        <a class = "nav-link" href = "{% url 'home' %}">Home</a>
+        <a class = "nav-link" href = "{% url 'menu' %}">Menu</a>
+
+        {% if user.is_authenticated %}
+        <a class = "nav-link" href = "{% url 'logout' %}" style = "float: right;">Logout</a>
+        <a class = "nav-link" href = "{% url 'order' %}" style = "float: right;">View Orders</a>
+        <div class = "nav-link no-hover" style = "float: right;">Hi, {{user.first_name}}!</div>
+        {% else %}
+        <a class = "nav-link" href = "{% url 'login' %}" style = "float: right;">Login</a>
+        <a class = "nav-link" href = "{% url 'register' %}" style = "float: right;">Register</a>
+        {% endif %}
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+</body>

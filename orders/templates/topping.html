@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/topping.css' %}">
+<script src = "{% static 'js/topping.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<form class = "form-group" action = "{% url 'order' %}" method = "POST">
+    {% csrf_token %}
+    <input type = "hidden" name = "category" value = "Pizza"/>
+    <input type = "hidden" name = "name" value = {{ name }}/>
+    <p>Choose up to 3 toppings. If none is chosen, a cheese pizza will be made.</p>
+    {% for topping in toppings %}
+    <label class = "container"> 
+        <input type = "checkbox" value = "{{topping}}" name = "topping">
+        <span class = "checkmark"></span>
+        <p style = "margin-left: 25px; margin-bottom: 0px;">{{topping}}</p>
+    </label>
+    {% endfor %}
+
+    <p>Choose the size of your pizza</p>
+    <label class = "container rad" style = "display: inline; margin-right: 50px;"> Small
+        <input type = "radio" name = "size" value = "Small" checked>
+        <span class = "checkmark rad"></span>
+    </label>
+
+    <label class = "container rad" style = "display: inline;"> Large
+        <input type = "radio" name = "size" value = "Large">
+        <span class = "checkmark rad"></span>
+    </label>
+
+    <button class = "btn btn-primary" style = "display: block; margin-top: 10px; margin-left: 5px;">Add to order</button>
+
+</form>
+
+{% endblock %}

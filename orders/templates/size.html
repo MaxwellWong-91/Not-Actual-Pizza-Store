@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/size.css' %}">
+{% endblock %}
+
+{% block body %}
+<form class = "form-group" action = "{% url 'order' %}" method = "POST">
+    {% csrf_token %}
+    <input type = "hidden" name = "category" value = "Platters"/>
+    <input type = "hidden" name = "name" value = "{{ currPlatter }}"/>
+
+    <p>Choose the size of your platter</p>
+   
+    <label class = "container rad" style = "display: inline; margin-right: 50px;"> Small ${{currPlatter.small}}
+        <input type = "radio" name = "size" value = "Small" checked>
+        <span class = "checkmark rad"></span>
+    </label>
+    
+    <label class = "container rad" style = "display: inline;"> Large ${{currPlatter.large}}
+        <input type = "radio" name = "size" value = "Large">
+        <span class = "checkmark rad"></span>
+    </label>
+    
+    <button class = "btn btn-primary" style = "display: block; margin-top: 10px; margin-left: 5px;">Add to order</button>
+
+</form>
+{% endblock %}

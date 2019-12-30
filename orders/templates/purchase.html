@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Purchase</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/purchase.css' %}">
+{% endblock %}
+
+{% block body%}
+<div class = "message">
+    <p style = "margin-left: 10px;">
+        Thank you for your order. Your order will be available to pick up in 10-15 minutes.
+        <br>
+        <br>
+        Enjoy,
+        <br>
+        Not an actual pizza store team 
+    </p>
+</div>
+{% endblock %}

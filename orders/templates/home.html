@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Not Actual Pizza Store</title>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class = "container-fluid">
+    <div id = "HomeCarousel" class = "carousel slide" data-ride = "carousel">
+        
+        <ol class = "carousel-indicators">
+            <li data-target = "#HomeCarousel" data-slide-to = "0" class = "active"></li>
+            <li data-target = "#HomeCarousel" data-slide-to = "1"></li>
+            <li data-target = "#HomeCarousel" data-slide-to = "2"></li>
+            <li data-target = "#HomeCarousel" data-slide-to = "3"></li>
+            <li data-target = "#HomeCarousel" data-slide-to = "4"></li>
+        </ol>
+        
+        <div class = "carousel-inner" role = "listbox">
+            
+            <div class = "carousel-item active">
+                <img class = "d-block w-100 h-100" src = "{% static 'images/pizza.jpg' %}" alt = "Pizza">
+            </div>
+            
+            <div class = "carousel-item">
+                <img class = "d-block w-100 h-100" src = "{% static 'images/subs.jpg' %}" alt = "Subs">
+            </div>
+
+            <div class = "carousel-item">
+                <img class = "d-block w-100 h-100" src = "{% static 'images/pasta.jpg' %}" alt = "Pasta">
+            </div>
+            
+            <div class = "carousel-item">
+                <img class = "d-block w-100 h-100" src = "{% static 'images/salads.jpg' %}" alt = "Salad">
+            </div>
+
+            <div class = "carousel-item">
+                <img class = "d-block w-100 h-100" src = "{% static 'images/platters.jpg' %}" alt = "Dinner Platters">
+            </div>
+
+        </div>
+        
+        <a class = "left carousel-control-prev" href = "#HomeCarousel" role = "button" data-slide = "prev">
+            <span class = "carousel-control-prev-icon" aria-hidden="true"></span>
+        </a> 
+
+        <a class = "right carousel-control-next" href = "#HomeCarousel" role = "button" data-slide = "next">
+            <span class = "carousel-control-next-icon" aria-hidden="true"></span>
+            
+        </a> 
+        
+    </div>
+</div>
+{% endblock %}

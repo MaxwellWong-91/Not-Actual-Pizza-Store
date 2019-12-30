@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/platters.css' %}">
+{% endblock %}
+
+{% block body %}
+{% for platter in platters %}
+<a class = "wrapper" href = "{% url 'platterSize' platter %}">
+    <div class = "row" style = "display: flex; height: 100%; align-items: center;">
+        <div class = "col" >
+            {{ platter }}
+        </div>
+        
+        {% if platter.small %}
+        <div class = "col text-right">
+            <div class = "row justify-content-end">
+                Small
+            </div>
+            <div class = "row justify-content-end">
+                ${{platter.small}}
+            </div>
+            
+        </div>
+        {% endif %}
+
+        {% if platter.large %}
+        <div class = "col text-right">
+            <div class = "row justify-content-end">
+                Large
+            </div>
+            <div class = "row justify-content-end">
+                ${{platter.large}}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+</a>
+{% endfor %}
+{% endblock %}

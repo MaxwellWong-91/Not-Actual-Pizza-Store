@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/error.css' %}">
+{% endblock %}
+
+{% block body%}
+<div class = "error">
+    <p style = "margin-top: 25px; margin-left: 10px;">Hello,</p>
+    <p style = "margin-left: 10px;">
+        It appears that you are not logged into our website. To allow for the best customer experience possible, we ask all customers to be logged in to begin the shopping experience.
+        <br>
+        <br>
+        Best Wishes,
+        <br>
+        Not an actual pizza store team 
+    </p>
+</div>
+{% endblock %}

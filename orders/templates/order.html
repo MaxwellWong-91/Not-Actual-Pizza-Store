@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Order</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/order.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src = "{% static 'js/order.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<div>
+    <table class = "table table-striped" style = "width: 60%; margin: auto;">
+        <thead>
+            <th scope = "col" style = "Width: 60%;">Item</th>
+            <th scope = "col">Price</th>
+            <th scope = "col">Action</th>
+        </thead>
+        <tbody>
+            {% for item in allOrder %}
+            <form>
+                <tr class = "item">
+                    <td>{{item}}</td>
+                    <td>${{item.price}}</td>
+                    <td><button class = "button" title = "Remove Order"><i class = "fa fa-trash" aria-hidden = "true"></i></button></td>
+                    <input type = "hidden" name = "type" value = "{{item.getType}}">
+                    <input type = "hidden" name = "id" value = "{{item.id}}">
+                </tr>
+            </form>
+            {% endfor %}
+
+            <tr>
+                <th style = "vertical-align: middle;">Total</th>
+                <td id = "total" style = "vertical-align: middle;">${{total}}</td>
+                <td>
+                    {% if total %}
+                    <a href = "{% url 'purchase' %}" id = "purchaseButton" class = "btn btn-primary" style = "color: white">Purchase</a>
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

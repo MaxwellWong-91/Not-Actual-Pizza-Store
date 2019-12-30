@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/subs.css' %}">
+{% endblock %}
+
+{% block body %}
+{% for sub in subs%}
+<a class = "wrapper" href = "{% url 'addon' sub %}">
+    <div class = "row" style = "display: flex; height: 100%; align-items: center;">
+        <div class = "col" >
+            {{ sub }}
+        </div>
+        
+        {% if sub.small %}
+        <div class = "col text-right">
+            <div class = "row justify-content-end">
+                Small
+            </div>
+            <div class = "row justify-content-end">
+                ${{sub.small}}
+            </div>
+            
+        </div>
+        {% endif %}
+
+        {% if sub.large %}
+        <div class = "col text-right">
+            <div class = "row justify-content-end">
+                Large
+            </div>
+            <div class = "row justify-content-end">
+                ${{sub.large}}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+</a>
+{% endfor %}
+{% endblock %}

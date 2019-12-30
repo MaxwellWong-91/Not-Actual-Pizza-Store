@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/pizza.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class = "row" style = "width: 100vw;">
+    <a class = "wrapper" href = "{% url 'topping' 'regular'%}" style = "margin-left: 25%; margin-right: 5%;">
+        <img class = "card-img-top" src = "{% static 'images/regular.jpg' %}" alt = "Regular Pizza">
+        <div class = "card-body">
+            <div class = "card-title">
+                Regular Pizza
+            </div>
+            <div class = "card-text">
+                Our Regular pizza is a thin-crust or Neapolitan pizza. They come in 2 sizes: small (12" in diameter) and large (16" in diameter). The small is suitable for 1 to 2 people while the large feeds 2 to 4 people.
+            </div>
+        </div>
+    </a>
+
+    <a class = "wrapper" href = "{% url 'topping' 'sicilian'%}" style = "margin-left: 5%; margin-right: 25%;">
+        <img class = "card-img-top " src = "{% static 'images/sicilian.jpg' %}" alt = "Regular Pizza">
+        <div class = "card-body">
+            <div class = "card-title">
+                Sicilian Pizza
+            </div>
+            <div class = "card-text">
+                Our Sicilian pizza is a deep-dish or thick-crust pizza. We sell them in a small 9-slice (16" x 16") or a large 15-slice size (28" x 16"). The small feeds 3 to 5 people while the large feeds 6 to 9 people.
+            </div>
+        </div>
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/pasta.css' %}">
+{% endblock %}
+
+{% block body %}
+{% for pasta in pastas%}
+<form class = "form-group" action = "{% url 'order' %}" method = "POST">
+    {% csrf_token %}
+    <input type = "hidden" name = "category" value = "Pasta"/>
+    <input type = "hidden" name = "name" value = "{{ pasta }}"/>
+    <div class = "row" style = "display: flex; height: 100%; align-items: center;">
+        <div class = "col" >
+            {{ pasta }}
+        </div>
+        
+        <div class = "col text-right">
+            <div class = "row justify-content-end">
+                Price
+            </div>
+            <div class = "row justify-content-end">
+                ${{pasta.price}}
+            </div>
+            
+        </div>
+        
+        <button class = "btn btn-primary" style = "display: block; margin-left: 15px;">Add to order</button>
+
+    </div>
+    
+</form>
+{% endfor %}
+{% endblock %}

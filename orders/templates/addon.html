@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+<link rel = "stylesheet" type = "text/css" href = "{% static 'css/topping.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<form class = "form-group" action = "{% url 'order' %}" method = "POST">
+    {% csrf_token %}
+    <input type = "hidden" name = "category" value = "Subs"/>
+    <input type = "hidden" name = "name" value = "{{ currSub }}"/>
+    <p>Choose the size of your sub</p>
+    {% if currSub.small %}
+    <label class = "container rad" style = "display: inline; margin-right: 50px;"> Small ${{currSub.small}}
+        <input type = "radio" name = "size" value = "Small" checked>
+        <span class = "checkmark rad"></span>
+    </label>
+    {% endif %}
+    {% if currSub.large %}
+    <label class = "container rad" style = "display: inline;"> Large ${{currSub.large}}
+        <input type = "radio" name = "size" value = "Large">
+        <span class = "checkmark rad"></span>
+    </label>
+    {% endif %}
+
+    <p>Choose your addons. </p>
+    {% for addon in addons %}
+    <label class = "container"> 
+        <input type = "checkbox" value = "{{addon}}" name = "addon">
+        <span class = "checkmark"></span>
+        <p style = "margin-left: 25px; margin-bottom: 0px;">{{addon}} +$0.50</p>
+    </label>
+    {% endfor %}
+
+    <button class = "btn btn-primary" style = "display: block; margin-top: 10px; margin-left: 5px;">Add to order</button>
+
+</form>
+
+{% endblock %}

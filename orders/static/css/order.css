@@ -1,0 +1,21 @@
+@keyframes delete{
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+.item {
+    animation-name: delete;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
