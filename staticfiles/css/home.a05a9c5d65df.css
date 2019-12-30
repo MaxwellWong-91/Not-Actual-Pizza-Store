@@ -1,0 +1,20 @@
+.container-fluid {
+    max-width: 60%;
+    width: 60%;
+    height: 50vh;
+    justify-content: center;
+}
+
+#HomeCarousel {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    max-height: 100%;
+    width: auto;
+}
+

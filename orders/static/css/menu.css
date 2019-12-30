@@ -9,7 +9,7 @@
 }
 
 .wrapper:hover {
-    background-color: rgb(14, 55, 236);
+    background-color: #007bff;
     text-decoration: none;
     color: white;
 }

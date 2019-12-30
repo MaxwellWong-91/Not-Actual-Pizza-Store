@@ -1,0 +1,34 @@
+.topnav {
+    height: 6vh;
+    background-color: #f2f2f2;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+
+.topnav .nav-link {
+    float: left;
+    display: block;
+    text-align: left;
+    height: 100%;
+}
+
+.topnav .nav-link:hover {
+    /*background-color: gainsboro;*/
+    background-color: #007bff;
+    color: white;
+}
+
+.topnav .nav-pill {
+    float: left;
+    display: block;
+    text-align: left;
+    height: 100%;
+}
+
+.nav-link.no-hover:hover {
+    background-color: inherit;
+    color: inherit;
+}

@@ -1,0 +1,8 @@
+.form-group.main {
+    border: 1px solid lightgray;
+    margin: 15px auto;
+    padding: 20px 5px;
+    max-width: 40%;
+    background-color: #f2f2f2;
+    box-shadow: 0pt 2px 5px rgba(105, 108, 109,  0.7),
+}

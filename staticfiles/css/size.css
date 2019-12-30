@@ -1,0 +1,105 @@
+.form-group {
+    border: 1px solid lightgray;
+    max-width: 60%;
+    margin: auto;
+    padding: 5px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 5px;
+}
+.container .div {
+    justify-content: left;
+    left: 30px;
+}
+
+.checkmark {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container .checkmark:after {
+    left: 10px;
+    top: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkmark.rad {
+    position: absolute;
+    top: 20;
+    left: 20;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.container.rad:hover input ~ .checkmark{
+    background-color: #ccc;
+}
+
+.container.rad input:checked ~ .checkmark{
+    background-color: #2196F3;
+}
+
+.checkmark.rad:after .rad{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container.rad input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container.rad .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}

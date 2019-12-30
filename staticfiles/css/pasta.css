@@ -1,0 +1,9 @@
+.form-group {
+    width: 60%; 
+    height: 125px; 
+    border: 1px solid lightgray; 
+    display: block; 
+    margin: 10px auto;
+    padding: 5px 10%;
+    background-color: #f2f2f2;
+}
