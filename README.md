@@ -7,3 +7,4 @@ A django website that allows registered users to browse and order from a restaur
 The current restaurant menu is taken from http://www.pinocchiospizza.net/menu.html. Please note that ordering from this website will not result in any food items being ordered.
 
 View Website at https://notactualpizzastore.herokuapp.com/. 
+Website last updated 12/31/19. Current website does not reflect new changes.
