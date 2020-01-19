@@ -1,34 +1,24 @@
-.topnav {
-    height: 6vh;
+.navbar.navbar-expand-md.navbar-light {
     background-color: #f2f2f2;
     padding-left: 20%;
     padding-right: 20%;
     margin-bottom: 30px;
     width: 100%;
+    
 }
 
-
-.topnav .nav-link {
-    float: left;
-    display: block;
-    text-align: left;
-    height: 100%;
-}
-
-.topnav .nav-link:hover {
+.navbar-nav li .nav-link:hover {
     /*background-color: gainsboro;*/
-    background-color: #007bff;
-    color: white;
+    background-color: lightblue;
 }
 
-.topnav .nav-pill {
-    float: left;
-    display: block;
-    text-align: left;
-    height: 100%;
+.navbar-nav li .nav-link {
+    /*background-color: gainsboro;*/
+    text-align: center;
 }
 
-.nav-link.no-hover:hover {
+
+.navbar div ul li .nav-link.no-hover:hover {
     background-color: inherit;
     color: inherit;
 }
